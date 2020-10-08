@@ -1,36 +1,47 @@
-* { /* Gælder alt på hele siden */
-  box-sizing: border-box; /* Bokse har altid den størrelse man giver uanset om der tilføjes margen, padding mv. */
-}
+/* ------------------------------------------------------------- */
+/* BOOTSTRAP START */
 
-/* Ovenstående kode kan give problemer ved nogle 3. parts scripts man henter. Men det gør det nemmere at forstå og lave kodning når man starter. */
+/* Her retter vi standard farverne i Bootstrap */
+$theme-colors: (
+	"primary": #8A0BDB,
+	"secondary": #0BDBA3,
+	"danger": #ff4136,
+	"success": #050,
+	"info": #894,
+	"warning": #823,
+	"light": #f8f9fa,
+	"dark": #1F1F1F
+);
 
-body {
-  margin: 0; /* Ingen kanter i siden af browser */
-}
 
-h1, h2, h3, h4, h5, h6 {
-  margin: 0; /* Ingen ydre margen fra overskrifter */
-  padding: 0; /* Ingen indre margen fra overskrifter */
-}
+/* Her retter vi margin og padding (p-1, p-2, pb-1.... og m-1, m-2, mt-1 osv) */
+$spacer: 100px;
 
-ul, ol {
-  margin: 2px 10px 2px 10px; /* Mindre margen på punkter */
-  padding: 0; /* Ingen indre margen fra lister */
-  list-style-position: inside; /* List punkter står på linje */
-}
+/* Her importerer vi Bootstrap i vores egen css - Dvs bootstrap css filen skal ikke længere være i vores HTML dokument */
+@import "../node_modules/bootstrap/scss/bootstrap";
 
-li {
-  margin: 0; /* Ingen ydre margen fra listpunkter */
+/* Her retter vi noget fra bootstrap som ikke kan ændres via variabler */
+ul ol {
+	margin-bottom: 20px;
 }
+$enable-gradients: true;
 
-p {
-  margin: 0; /* Ingen ydre margen fra paragraffer */
-  padding: 0; /* Ingen indre margen fra paragraffer */
-}
+/* BOOTSTRAP SLUT */
+/* ------------------------------------------------------------- */
+/* EGEN CSS START */
 
-/* Sikrer billeder er responsive */
-img {
-  display: block; /* Billeder er et element (laver linjeskift) */
-  max-width: 100%; /* Bredde må maks fylde 100% */
-  height: auto; /* Højden skal tilpasse sig */
-}
+/* Her henter vi vores eget stylesheet (det der før hed styles.css) - nu har vi kaldt det _myStyles.scss */
+@import "myStyles";
+
+/* EGEN CSS SLUT */
+/* ------------------------------------------------------------- */
+/* EGEN RESPONSIVE CSS START */
+
+/* Her henter vi vores tablet version _tablet.scss */
+@import "tablet";
+
+/* Her henter vi vores computer version _tablet.scss */
+@import "computer";
+
+/* EGEN RESPONSIVE CSS SLUT */
+/* ------------------------------------------------------------- */
